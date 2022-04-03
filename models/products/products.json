@@ -1,0 +1,10 @@
+[
+  { "id": "1", "name": "Allen Raymond", "price": 2, "location": "Lviv" },
+  { "id": "2", "name": "Chaim Lewis", "price": 3, "location": "Harkiv" },
+  { "id": "3", "name": "Kennedy Lane", "price": 3.4, "location": "Odessa" },
+  { "id": "4", "name": "Maks Baku", "price": 21, "location": "Baku" },
+  { "id": "5", "name": "Cyrus Jackson", "price": 6, "location": "Kyiv" },
+  { "id": "6", "name": "Abbot Franks", "price": 7, "location": "Dnepr" },
+  { "id": "7", "name": "Reuben Henry", "price": 8, "location": "Dilagarda" },
+  { "id": "8", "name": "Simon Morton", "price": 4.5, "location": "Ganja" }
+]
