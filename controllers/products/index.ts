@@ -3,6 +3,7 @@ import getById from "./getById";
 import add from "./add";
 import updateById from "./updateById";
 import deleteById from "./deleteById";
+import updateStatus from "./updateStatus";
 
 export default {
   getAll,
@@ -10,4 +11,5 @@ export default {
   add,
   updateById,
   deleteById,
+  updateStatus,
 };

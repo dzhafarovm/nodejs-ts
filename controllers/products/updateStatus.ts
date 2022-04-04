@@ -2,9 +2,10 @@ import { Request, Response } from "express";
 import { NotFound } from "http-errors";
 import { Product } from "../../models/";
 
-const updateById = async (req: Request, res: Response) => {
+const updateStatus = async (req: Request, res: Response) => {
   const { id } = req.params;
-  const result = await Product.findByIdAndUpdate(id, req.body, { new: true });
+  const { status } = req.body;
+  const result = await Product.findByIdAndUpdate(id, { status }, { new: true });
 
   if (!result) {
     throw new NotFound(`Product with id=${id} not foundx`);
@@ -19,4 +20,4 @@ const updateById = async (req: Request, res: Response) => {
   });
 };
 
-export default updateById;
+export default updateStatus;

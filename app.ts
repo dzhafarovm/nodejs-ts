@@ -1,8 +1,13 @@
 import express, { Application, Request, Response, NextFunction } from "express";
 import logger from "morgan";
 import cors from "cors";
+import dotenv from "dotenv";
 
+import authRouter from "./routes/api/auth";
+import usersRouter from "./routes/api/users";
 import productsRouter from "./routes/api/products";
+
+dotenv.config();
 
 interface IError {
   message: string;
@@ -17,6 +22,8 @@ app.use(logger(formatsLogger));
 app.use(cors());
 app.use(express.json());
 
+app.use("/api/auth", authRouter);
+app.use("/api/users", usersRouter);
 app.use("/api/products", productsRouter);
 
 app.use((req: Request, res: Response) => {
@@ -29,7 +36,3 @@ app.use((err: IError, req: Request, res: Response, next: NextFunction) => {
 });
 
 export default app;
-
-// user: "Maks"
-// paswword: "Maks"
-// mongodb+srv://Maks:Maks@cluster0.id8wv.mongodb.net/test

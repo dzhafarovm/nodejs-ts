@@ -1,3 +1,5 @@
 import products from "./products";
+import auth from "./auth";
+import users from "./users";
 
-export { products };
+export { products, auth, users };

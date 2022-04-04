@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
 import { NotFound } from "http-errors";
-import productsOperations from "../../models/products";
+import { Product } from "../../models/";
 
 const deleteById = async (req: Request, res: Response) => {
   const { id } = req.params;
 
-  const result = await productsOperations.deleteById(id);
+  const result = await Product.findByIdAndRemove(id);
 
   if (!result) {
     throw new NotFound(`Product with id=${id} not found`);

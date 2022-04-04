@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
 import { NotFound } from "http-errors";
-import productsOperations from "../../models/products";
+import { Product } from "../../models/";
 
 const getById = async (req: Request, res: Response) => {
   const { id } = req.params;
-  const result = await productsOperations.getById(id);
+  const result = await Product.findOne({ _id: id });
 
   if (!result) {
     throw new NotFound(`Product with id=${id} not found`);

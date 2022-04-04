@@ -1,8 +1,9 @@
 import { Request, Response } from "express";
-import productsOperations from "../../models/products";
+import { Product } from "../../models/";
 
-const add = async (req: Request, res: Response) => {
-  const result = await productsOperations.add(req.body);
+const add = async (req: any, res: Response) => {
+  const { _id } = req.user;
+  const result = await Product.create({ ...req.body, owner: _id });
 
   res.status(201).json({
     status: "success",
