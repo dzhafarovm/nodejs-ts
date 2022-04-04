@@ -38,7 +38,7 @@ const authCurrent = async (
       const { id } = (await jwt.verify(token, SECRET_KEY)) as JwtPayload;
       const user = await User.findById(id);
 
-      if (!user) {
+      if (!user || !user.token) {
         throw new Unauthorized("Not authorized");
       }
 
